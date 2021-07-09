@@ -135,7 +135,7 @@ matches2TeamsHelper <- function(input,output,t20type="IPL") {
 
     } else if (t20type == "BBL"){
         dir1="./bbl/bblMatches2Teams"
-        BBLmatch <- paste("./bbl/bblMatches2Teams/", input$match2TBBL,".RData",sep="")
+        BBLmatch <- paste("./bbl/bblMatches2Teams/", input$match2BBL,".RData",sep="")
         cat("BBL2=",getwd(),"\n")
         load(BBLmatch)
         matchesDF <- matches
@@ -170,7 +170,7 @@ matches2TeamsHelper <- function(input,output,t20type="IPL") {
 
     } else if (t20type == "ODIW"){
         dir1="./odi/odiWomenMatches2Teams"
-        ODIWmatch <- paste("./odi/odiWomenMatches2Teams/", input$matchODIW,".RData",sep="")
+        ODIWmatch <- paste("./odi/odiWomenMatches2Teams/", input$match2ODIW,".RData",sep="")
         cat("ODIW2=",getwd(),"\n")
         load(ODIWmatch)
         matchesDF <- matches
@@ -191,6 +191,6 @@ matches2TeamsHelper <- function(input,output,t20type="IPL") {
 
     maxDate= as.Date(max(matchesDF$date))
     minDate= as.Date(min(matchesDF$date))
-    cat("min=",minDate,"max=",maxDate,"\n")
+    cat("Date min=",as.Date(minDate),"max=",as.Date(maxDate),"\n")
     return(list(minDate,maxDate))
 }

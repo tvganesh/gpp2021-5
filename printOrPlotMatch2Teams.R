@@ -122,34 +122,34 @@ printOrPlotMatch2Teams <- function(input,output,t20type="IPL"){
                                  input$repType,input$team2,otherTeam,t20type,input$dateRange1)
     else if (t20type == "T20M")
         a <- analyzeMatches2Teams(input$match2T20M,input$matches2TeamFuncT20M,input$plotOrTable1T20M,
-                                  input$repTypeT20M,input$team2T20M,otherTeam,t20type)
+                                  input$repTypeT20M,input$team2T20M,otherTeam,t20type,input$dateRange1T20M)
     else if (t20type == "T20W")
         a <- analyzeMatches2Teams(input$match2T20W,input$matches2TeamFuncT20W,input$plotOrTable1T20W,
-                                  input$repTypeT20W,input$team2T20W,otherTeam,t20type)
+                                  input$repTypeT20W,input$team2T20W,otherTeam,t20type,input$dateRange1T20W)
     else if (t20type == "BBL")
         a <- analyzeMatches2Teams(input$match2BBL,input$matches2TeamFuncBBL,input$plotOrTable1BBL,
-                                  input$repTypeBBL,input$team2BBL,otherTeam,t20type)
+                                  input$repTypeBBL,input$team2BBL,otherTeam,t20type,input$dateRange1BBL)
     else if (t20type == "NTB")
         a <- analyzeMatches2Teams(input$match2NTB,input$matches2TeamFuncNTB,input$plotOrTable1NTB,
-                                  input$repTypeNTB,input$team2NTB,otherTeam,t20type)
+                                  input$repTypeNTB,input$team2NTB,otherTeam,t20type,input$dateRange1NTB)
     else if (t20type == "PSL")
         a <- analyzeMatches2Teams(input$match2PSL,input$matches2TeamFuncPSL,input$plotOrTable1PSL,
-                                  input$repTypePSL,input$team2PSL,otherTeam,t20type)
+                                  input$repTypePSL,input$team2PSL,otherTeam,t20type, input$dateRange1PSL)
     else if (t20type == "WBB")
         a <- analyzeMatches2Teams(input$match2WBB,input$matches2TeamFuncWBB,input$plotOrTable1WBB,
-                                  input$repTypeWBB,input$team2WBB,otherTeam,t20type)
+                                  input$repTypeWBB,input$team2WBB,otherTeam,t20type, input$dateRange1WBB)
     else if (t20type == "ODIM")
         a <- analyzeMatches2Teams(input$match2ODIM,input$matches2TeamFuncODIM,input$plotOrTable1ODIM,
-                                  input$repTypeODIM,input$team2ODIM,otherTeam,t20type)
+                                  input$repTypeODIM,input$team2ODIM,otherTeam,t20type, input$dateRange1ODIM)
     else if (t20type == "ODIW")
         a <- analyzeMatches2Teams(input$match2ODIW,input$matches2TeamFuncODIW,input$plotOrTable1ODIW,
-                                  input$repTypeODIW,input$team2ODIW,otherTeam,t20type)
+                                  input$repTypeODIW,input$team2ODIW,otherTeam,t20type, input$dateRange1ODIW)
     else if (t20type == "CPL")
         a <- analyzeMatches2Teams(input$match2CPL,input$matches2TeamFuncCPL,input$plotOrTable1CPL,
-                                  input$repTypeCPL,input$team2CPL,otherTeam,t20type)
+                                  input$repTypeCPL,input$team2CPL,otherTeam,t20type,input$dateRange1CPL)
     else if (t20type == "SSM")
         a <- analyzeMatches2Teams(input$match2SSM,input$matches2TeamFuncSSM,input$plotOrTable1SSM,
-                                  input$repTypeSSM,input$team2SSM,otherTeam,t20type)
+                                  input$repTypeSSM,input$team2SSM,otherTeam,t20type, input$dateRange1SSM)
     print("Output oa anlsy2")
     head(a)
 

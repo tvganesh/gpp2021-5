@@ -378,7 +378,22 @@ shinyServer(function(input, output,session) {
   })
 
   #################################### T20 Men's Matches between 2 teams ######################
-  # Analyze Head to head confrontation of T20 Mens teams
+  # Set date range
+  output$dateRange1T20M <- renderUI({
+    m <- matches2TeamsHelper(input, output,"T20M")
+    dateRangeInput("dateRange1T20M", label = h4("Date range"),
+                   start = m[[1]],
+                   end   = m[[2]],
+                   min = m[[1]],
+                   max= m[[2]])
+  })
+
+  observeEvent(input$dateRange1T20M,{
+    m <- matches2TeamsHelper(input, output,"T20M")
+    updateDateRangeInput(session, "dateRange1T20M",
+                         start = input$dateRange1T20M[1],
+                         end   = input$dateRange1T20M[2])
+  })
 
   # Analyze and display T20 Men Matches between 2 teams plot
   output$T20MMatch2TeamsPlots <- renderPlot({
@@ -602,7 +617,22 @@ shinyServer(function(input, output,session) {
   })
 
   #################################### T20 Women's Matches between 2 teams ######################
-  # Analyze Head to head confrontation of T20 Womens teams
+  # Set date range
+  output$dateRange1T20W <- renderUI({
+    m <- matches2TeamsHelper(input, output,"T20W")
+    dateRangeInput("dateRange1T20W", label = h4("Date range"),
+                   start = m[[1]],
+                   end   = m[[2]],
+                   min = m[[1]],
+                   max= m[[2]])
+  })
+
+  observeEvent(input$dateRange1T20W,{
+    m <- matches2TeamsHelper(input, output,"T20W")
+    updateDateRangeInput(session, "dateRange1T20W",
+                         start = input$dateRange1T20W[1],
+                         end   = input$dateRange1T20W[2])
+  })
 
   # Analyze and display T20 Men Matches between 2 teams plot
   output$T20WMatch2TeamsPlots <- renderPlot({
@@ -824,7 +854,22 @@ shinyServer(function(input, output,session) {
   })
 
   #################################### BBL  Matches between 2 teams ######################
-  # Analyze Head to head confrontation of BBL Mens teams
+  # Set date range
+  output$dateRange1BBL <- renderUI({
+    m <- matches2TeamsHelper(input, output,"BBL")
+    dateRangeInput("dateRange1BBL", label = h4("Date range"),
+                   start = m[[1]],
+                   end   = m[[2]],
+                   min = m[[1]],
+                   max= m[[2]])
+  })
+
+  observeEvent(input$dateRange1BBL,{
+    m <- matches2TeamsHelper(input, output,"BBL")
+    updateDateRangeInput(session, "dateRange1BBL",
+                         start = input$dateRange1BBL[1],
+                         end   = input$dateRange1BBL[2])
+  })
 
   # Analyze and display BBL Matches between 2 teams plot
   output$BBLMatch2TeamsPlots <- renderPlot({
@@ -1044,7 +1089,22 @@ shinyServer(function(input, output,session) {
   })
 
   #################################### NTB  Matches between 2 teams ######################
-  # Analyze Head to head confrontation of NTB Mens teams
+  # Set date range
+  output$dateRange1NTB <- renderUI({
+    m <- matches2TeamsHelper(input, output,"NTB")
+    dateRangeInput("dateRange1NTB", label = h4("Date range"),
+                   start = m[[1]],
+                   end   = m[[2]],
+                   min = m[[1]],
+                   max= m[[2]])
+  })
+
+  observeEvent(input$dateRange1NTB,{
+    m <- matches2TeamsHelper(input, output,"NTB")
+    updateDateRangeInput(session, "dateRange1NTB",
+                         start = input$dateRange1NTB[1],
+                         end   = input$dateRange1NTB[2])
+  })
 
   # Analyze and display NTB Matches between 2 teams plot
   output$NTBMatch2TeamsPlots <- renderPlot({
@@ -1266,7 +1326,22 @@ shinyServer(function(input, output,session) {
   })
 
   #################################### PSL  Matches between 2 teams ######################
-  # Analyze Head to head confrontation of PSL Mens teams
+  # Set date range
+  output$dateRange1PSL <- renderUI({
+    m <- matches2TeamsHelper(input, output,"PSL")
+    dateRangeInput("dateRange1PSL", label = h4("Date range"),
+                   start = m[[1]],
+                   end   = m[[2]],
+                   min = m[[1]],
+                   max= m[[2]])
+  })
+
+  observeEvent(input$dateRange1PSL,{
+    m <- matches2TeamsHelper(input, output,"PSL")
+    updateDateRangeInput(session, "dateRange1PSL",
+                         start = input$dateRange1PSL[1],
+                         end   = input$dateRange1PSL[2])
+  })
 
   # Analyze and display PSL Matches between 2 teams plot
   output$PSLMatch2TeamsPlots <- renderPlot({
@@ -1490,7 +1565,22 @@ shinyServer(function(input, output,session) {
   })
 
   #################################### WBB  Matches between 2 teams ######################
-  # Analyze Head to head confrontation of WBB Mens teams
+  # Set date range
+  output$dateRange1WBB <- renderUI({
+    m <- matches2TeamsHelper(input, output,"WBB")
+    dateRangeInput("dateRange1WBB", label = h4("Date range"),
+                   start = m[[1]],
+                   end   = m[[2]],
+                   min = m[[1]],
+                   max= m[[2]])
+  })
+
+  observeEvent(input$dateRange1WBB,{
+    m <- matches2TeamsHelper(input, output,"WBB")
+    updateDateRangeInput(session, "dateRange1WBB",
+                         start = input$dateRange1WBB[1],
+                         end   = input$dateRange1WBB[2])
+  })
 
   # Analyze and display WBB Matches between 2 teams plot
   output$WBBMatch2TeamsPlots <- renderPlot({
@@ -1708,7 +1798,22 @@ shinyServer(function(input, output,session) {
   })
 
   #################################### ODIM  Matches between 2 teams ######################
-  # Analyze Head to head confrontation of ODIM Mens teams
+  # Set date range
+  output$dateRange1ODIM <- renderUI({
+    m <- matches2TeamsHelper(input, output,"ODIM")
+    dateRangeInput("dateRange1ODIM", label = h4("Date range"),
+                   start = m[[1]],
+                   end   = m[[2]],
+                   min = m[[1]],
+                   max= m[[2]])
+  })
+
+  observeEvent(input$dateRange1ODIM,{
+    m <- matches2TeamsHelper(input, output,"ODIM")
+    updateDateRangeInput(session, "dateRange1ODIM",
+                         start = input$dateRange1ODIM[1],
+                         end   = input$dateRange1ODIM[2])
+  })
 
   # Analyze and display ODIM Matches between 2 teams plot
   output$ODIMMatch2TeamsPlots <- renderPlot({
@@ -1879,7 +1984,22 @@ shinyServer(function(input, output,session) {
   })
 
   #################################### ODIW  Matches between 2 teams ######################
-  # Analyze Head to head confrontation of ODIW Mens teams
+  # Set date range
+  output$dateRange1ODIW <- renderUI({
+    m <- matches2TeamsHelper(input, output,"ODIW")
+    dateRangeInput("dateRange1ODIW", label = h4("Date range"),
+                   start = m[[1]],
+                   end   = m[[2]],
+                   min = m[[1]],
+                   max= m[[2]])
+  })
+
+  observeEvent(input$dateRange1ODIW,{
+    m <- matches2TeamsHelper(input, output,"ODIW")
+    updateDateRangeInput(session, "dateRange1ODIW",
+                         start = input$dateRange1ODIW[1],
+                         end   = input$dateRange1ODIW[2])
+  })
 
   # Analyze and display ODIW Matches between 2 teams plot
   output$ODIWMatch2TeamsPlots <- renderPlot({
@@ -2054,7 +2174,22 @@ shinyServer(function(input, output,session) {
   })
 
   #################################### CPL  Matches between 2 teams ######################
-  # Analyze Head to head confrontation of CPL Mens teams
+  # Set date range
+  output$dateRange1CPL <- renderUI({
+    m <- matches2TeamsHelper(input, output,"CPL")
+    dateRangeInput("dateRange1CPL", label = h4("Date range"),
+                   start = m[[1]],
+                   end   = m[[2]],
+                   min = m[[1]],
+                   max= m[[2]])
+  })
+
+  observeEvent(input$dateRange1CPL,{
+    m <- matches2TeamsHelper(input, output,"CPL")
+    updateDateRangeInput(session, "dateRange1CPL",
+                         start = input$dateRange1CPL[1],
+                         end   = input$dateRange1CPL[2])
+  })
 
   # Analyze and display CPL Matches between 2 teams plot
   output$CPLMatch2TeamsPlots <- renderPlot({
@@ -2279,7 +2414,22 @@ shinyServer(function(input, output,session) {
   })
 
   #################################### SSM  Matches between 2 teams ######################
-  # Analyze Head to head confrontation of SSM Mens teams
+  # Set date range
+  output$dateRange1SSM <- renderUI({
+    m <- matches2TeamsHelper(input, output,"SSM")
+    dateRangeInput("dateRange1SSM", label = h4("Date range"),
+                   start = m[[1]],
+                   end   = m[[2]],
+                   min = m[[1]],
+                   max= m[[2]])
+  })
+
+  observeEvent(input$dateRange1SSM,{
+    m <- matches2TeamsHelper(input, output,"SSM")
+    updateDateRangeInput(session, "dateRange1SSM",
+                         start = input$dateRange1SSM[1],
+                         end   = input$dateRange1SSM[2])
+  })
 
   # Analyze and display SSM Matches between 2 teams plot
   output$SSMMatch2TeamsPlots <- renderPlot({
