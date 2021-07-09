@@ -6,7 +6,7 @@
 # File: server.R
 # More details: https://gigadom.in/
 #
-#########################################################################################################
+############################daT#############################################################################
 library(shiny)
 library(yorkr)
 library(rpart)
@@ -147,9 +147,9 @@ shinyServer(function(input, output,session) {
                    max= m[[2]])
   })
 
-  observeEvent(input$dateRange1,{
+   observeEvent(input$dateRange1,{
     m <- matches2TeamsHelper(input, output,"IPL")
-    updateDateRangeInput(session, "dateRange1", label = h4("Date range"),
+    updateDateRangeInput(session, "dateRange1",
                          start = input$dateRange1[1],
                          end   = input$dateRange1[2])
   })

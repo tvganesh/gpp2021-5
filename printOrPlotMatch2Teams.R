@@ -113,40 +113,7 @@ printOrPlotMatch2Teams <- function(input,output,t20type="IPL"){
         cat("T20 team=",input$team2SSM,"other team=",otherTeam)
     }
 
-    # # Get date range
-    # if(t20type == "IPL"){
-    #     m <- matches2TeamsHelper(input$match2,t20type)
-    #     output$dateRange1 <- renderUI({
-    #         dateRangeInput("dateRange1", label = h4("Date range"),
-    #                        start = m[[1]],
-    #                        end   = m[[2]],
-    #                        min = m[[1]],
-    #                        max= m[[2]])
-    #     })
-    #
-    #
-    # }
-    # else if (t20type == "T20M")
-    #     m <- matches2TeamsHelper(input$match2T20M,t20type)
-    # else if (t20type == "T20W")
-    #     m <- matches2TeamsHelper(input$match2T20W,t20type)
-    # else if (t20type == "BBL")
-    #     m <- matches2TeamsHelper(input$match2BBL,t20type)
-    # else if (t20type == "NTB")
-    #     m <- matches2TeamsHelper(input$match2NTB,t20type)
-    # else if (t20type == "PSL")
-    #     m <- matches2TeamsHelper(input$match2PSL,t20type)
-    # else if (t20type == "WBB")
-    #     m <- matches2TeamsHelper(input$match2WBB,t20type)
-    # else if (t20type == "ODIM")
-    #     m <- matches2TeamsHelper(input$match2ODIM,t20type)
-    # else if (t20type == "ODIW")
-    #     m <- matches2TeamsHelper(input$match2ODIW,t20type)
-    # else if (t20type == "CPL")
-    #     m <- matches2TeamsHelper(input$match2CPL,t20type)
-    # else if (t20type == "SSM")
-    #     m <- matches2TeamsHelper(input$match2SSM,t20type)
-    #
+
 
 
     # Analyze matches 2 teams
