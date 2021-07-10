@@ -144,7 +144,7 @@ analyzeMatches2Teams <- function(match2,matchFunc,plotOrTable1,repType, team,opp
     } else if (matchFunc == "Team Bowler Wicket Runs All Matches"){
         teamBowlersWicketRunsOppnAllMatches(matchesDF,team,opposition,plot=plotOrTable1)
     } else if (matchFunc == "Win Loss Head-to-head All Matches"){
-        plotWinLossBetweenTeams(team,opposition,dir1,plot=plotOrTable1)
+        plotWinLossBetweenTeams(team,opposition,dir1,dateRange, plot=plotOrTable1)
     }
 
 
