@@ -151,7 +151,7 @@ analyzeTeamPerfOverall <- function(matches,matchFunc,team,rankV,plotOrTable2,rep
         teamBowlingWicketKindAllOppnAllMatches(matchesDF,team,"All",plot=plotOrTable2)
 
     } else if (matchFunc == "Win Loss Team vs All Opposition"){
-      plotWinLossTeamVsAllTeams(team,dir1,plot=plotOrTable2)
+      plotWinLossTeamVsAllTeams(team,dir1,dateRange, plot=plotOrTable2)
 
     }
 
