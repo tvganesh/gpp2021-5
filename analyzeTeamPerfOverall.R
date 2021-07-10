@@ -8,7 +8,7 @@
 #
 #########################################################################################################
 # Analyze an IPL team's performance in all matches
-analyzeTeamPerfOverall <- function(matches,matchFunc,team,rankV,plotOrTable2,repType2,t20type="IPL") {
+analyzeTeamPerfOverall <- function(matches,matchFunc,team,rankV,plotOrTable2,repType2,t20type="IPL",dateRange) {
 
   if(t20type == "IPL"){
     # Check and get the team indices of IPL teams in which the bowler has played
@@ -103,6 +103,14 @@ analyzeTeamPerfOverall <- function(matches,matchFunc,team,rankV,plotOrTable2,rep
     } else {
         val3= FALSE
     }
+
+  print(dim(matchesDF))
+  print(as.Date(dateRange[1]))
+  print(as.Date(dateRange[2]))
+  print(names(matchesDF))
+  matchesDF=matchesDF %>% filter(date >= dateRange[1] & date <= dateRange[2])
+  print("b")
+  print(dim(matchesDF))
 
     # Call the correct function
     if(matchFunc == "Team Batting Scorecard Overall"){

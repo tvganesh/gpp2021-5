@@ -42,6 +42,7 @@ source('printOrPlotMatch2Teams.R')
 source('printOrPlotTeamPerfOverall.R')
 source("rankPlayers.R")
 source("matches2TeamsHelper.R")
+source("teamPerfOverallHelper.R")
 shinyServer(function(input, output,session) {
 
 
@@ -194,6 +195,23 @@ shinyServer(function(input, output,session) {
 
 
   ################################ IPL Teams's overall performance ##############################
+
+  output$dateRange2 <- renderUI({
+    n <- teamPerfOverallHelper(input, output,"IPL")
+    dateRangeInput("dateRange2", label = h4("Date range"),
+                   start = n[[1]],
+                   end   = n[[2]],
+                   min = n[[1]],
+                   max= n[[2]])
+  })
+
+  observeEvent(input$dateRange2,{
+    m <- teamPerfOverallHelper(input, output,"IPL")
+    updateDateRangeInput(session, "dateRange2",
+                         start = input$dateRange2[1],
+                         end   = input$dateRange2[2])
+  })
+
   # Analyze overall IPL team performance plots
   output$IPLTeamPerfOverallPlots <- renderPlot({
     printOrPlotTeamPerfOverall(input, output)
@@ -439,6 +457,23 @@ shinyServer(function(input, output,session) {
 
 
   ################################ T20 Men's Teams's overall performance ##############################
+  # Date Range
+  output$dateRange2T20M <- renderUI({
+    n <- teamPerfOverallHelper(input, output,"T20M")
+    dateRangeInput("dateRange2T20M", label = h4("Date range"),
+                   start = n[[1]],
+                   end   = n[[2]],
+                   min = n[[1]],
+                   max= n[[2]])
+  })
+
+  observeEvent(input$dateRange2T20M,{
+    m <- teamPerfOverallHelper(input, output,"T20M")
+    updateDateRangeInput(session, "dateRange2T20M",
+                         start = input$dateRange2T20M[1],
+                         end   = input$dateRange2T20M[2])
+  })
+
   # Analyze overall T20 Mens team performance plots
   output$T20MTeamPerfOverallPlots <- renderPlot({
     printOrPlotTeamPerfOverall(input, output,"T20M")
@@ -678,6 +713,23 @@ shinyServer(function(input, output,session) {
 
 
   ################################ T20 Women's Teams's overall performance ##############################
+  # Date Range
+  output$dateRange2T20W <- renderUI({
+    n <- teamPerfOverallHelper(input, output,"T20W")
+    dateRangeInput("dateRange2T20W", label = h4("Date range"),
+                   start = n[[1]],
+                   end   = n[[2]],
+                   min = n[[1]],
+                   max= n[[2]])
+  })
+
+  observeEvent(input$dateRange2T20W,{
+    m <- teamPerfOverallHelper(input, output,"T20W")
+    updateDateRangeInput(session, "dateRange2T20W",
+                         start = input$dateRange2T20W[1],
+                         end   = input$dateRange2T20W[2])
+  })
+
   # Analyze overall T20 Womens team performance plots
   output$T20WTeamPerfOverallPlots <- renderPlot({
     printOrPlotTeamPerfOverall(input, output,"T20W")
@@ -915,6 +967,23 @@ shinyServer(function(input, output,session) {
 
 
   ################################ BBL Teams's overall performance ##############################
+  # Date Range
+  output$dateRange2BBL <- renderUI({
+    n <- teamPerfOverallHelper(input, output,"BBL")
+    dateRangeInput("dateRange2BBL", label = h4("Date range"),
+                   start = n[[1]],
+                   end   = n[[2]],
+                   min = n[[1]],
+                   max= n[[2]])
+  })
+
+  observeEvent(input$dateRange2BBL,{
+    m <- teamPerfOverallHelper(input, output,"BBL")
+    updateDateRangeInput(session, "dateRange2BBL",
+                         start = input$dateRange2BBL[1],
+                         end   = input$dateRange2BBL[2])
+  })
+
   # Analyze overall BBL team performance plots
   output$BBLTeamPerfOverallPlots <- renderPlot({
     printOrPlotTeamPerfOverall(input, output,"BBL")
@@ -1150,6 +1219,21 @@ shinyServer(function(input, output,session) {
 
 
   ################################ NTB Teams's overall performance ##############################
+  output$dateRange2NTB <- renderUI({
+    n <- teamPerfOverallHelper(input, output,"NTB")
+    dateRangeInput("dateRange2NTB", label = h4("Date range"),
+                   start = n[[1]],
+                   end   = n[[2]],
+                   min = n[[1]],
+                   max= n[[2]])
+  })
+
+  observeEvent(input$dateRange2NTB,{
+    m <- teamPerfOverallHelper(input, output,"NTB")
+    updateDateRangeInput(session, "dateRange2NTB",
+                         start = input$dateRange2NTB[1],
+                         end   = input$dateRange2NTB[2])
+  })
   # Analyze overall NTB team performance plots
   output$NTBTeamPerfOverallPlots <- renderPlot({
     printOrPlotTeamPerfOverall(input, output,"NTB")
@@ -1387,6 +1471,22 @@ shinyServer(function(input, output,session) {
 
 
   ################################ PSL Teams's overall performance ##############################
+  output$dateRange2PSL <- renderUI({
+    n <- teamPerfOverallHelper(input, output,"PSL")
+    dateRangeInput("dateRange2PSL", label = h4("Date range"),
+                   start = n[[1]],
+                   end   = n[[2]],
+                   min = n[[1]],
+                   max= n[[2]])
+  })
+
+  observeEvent(input$dateRange2PSL,{
+    m <- teamPerfOverallHelper(input, output,"PSL")
+    updateDateRangeInput(session, "dateRange2PSL",
+                         start = input$dateRange2PSL[1],
+                         end   = input$dateRange2PSL[2])
+  })
+
   # Analyze overall PSL team performance plots
   output$PSLTeamPerfOverallPlots <- renderPlot({
     printOrPlotTeamPerfOverall(input, output,"PSL")
@@ -1626,6 +1726,22 @@ shinyServer(function(input, output,session) {
 
 
   ################################ WBB Teams's overall performance ##############################
+  output$dateRange2WBB <- renderUI({
+    n <- teamPerfOverallHelper(input, output,"WBB")
+    dateRangeInput("dateRange2WBB", label = h4("Date range"),
+                   start = n[[1]],
+                   end   = n[[2]],
+                   min = n[[1]],
+                   max= n[[2]])
+  })
+
+  observeEvent(input$dateRange2WBB,{
+    m <- teamPerfOverallHelper(input, output,"WBB")
+    updateDateRangeInput(session, "dateRange2WBB",
+                         start = input$dateRange2WBB[1],
+                         end   = input$dateRange2WBB[2])
+  })
+
   # Analyze overall WBB team performance plots
   output$WBBTeamPerfOverallPlots <- renderPlot({
     printOrPlotTeamPerfOverall(input, output,"WBB")
@@ -1859,6 +1975,22 @@ shinyServer(function(input, output,session) {
 
 
   ################################ ODIM Teams's overall performance ##############################
+  output$dateRange2ODIM <- renderUI({
+    n <- teamPerfOverallHelper(input, output,"ODIM")
+    dateRangeInput("dateRange2ODIM", label = h4("Date range"),
+                   start = n[[1]],
+                   end   = n[[2]],
+                   min = n[[1]],
+                   max= n[[2]])
+  })
+
+  observeEvent(input$dateRange2ODIM,{
+    m <- teamPerfOverallHelper(input, output,"ODIM")
+    updateDateRangeInput(session, "dateRange2ODIM",
+                         start = input$dateRange2ODIM[1],
+                         end   = input$dateRange2ODIM[2])
+  })
+
   # Analyze overall ODIM team performance plots
   output$ODIMTeamPerfOverallPlots <- renderPlot({
     printOrPlotTeamPerfOverall(input, output,"ODIM")
@@ -2045,6 +2177,22 @@ shinyServer(function(input, output,session) {
 
 
   ################################ ODIW Teams's overall performance ##############################
+  output$dateRange2ODIW <- renderUI({
+    n <- teamPerfOverallHelper(input, output,"ODIW")
+    dateRangeInput("dateRange2ODIW", label = h4("Date range"),
+                   start = n[[1]],
+                   end   = n[[2]],
+                   min = n[[1]],
+                   max= n[[2]])
+  })
+
+  observeEvent(input$dateRange2ODIW,{
+    m <- teamPerfOverallHelper(input, output,"ODIW")
+    updateDateRangeInput(session, "dateRange2ODIW",
+                         start = input$dateRange2ODIW[1],
+                         end   = input$dateRange2ODIW[2])
+  })
+
   # Analyze overall ODIW team performance plots
   output$ODIWTeamPerfOverallPlots <- renderPlot({
     printOrPlotTeamPerfOverall(input, output,"ODIW")
@@ -2235,6 +2383,24 @@ shinyServer(function(input, output,session) {
 
 
   ################################ CPL Teams's overall performance ##############################
+
+  output$dateRange2CPL <- renderUI({
+    n <- teamPerfOverallHelper(input, output,"CPL")
+    dateRangeInput("dateRange2CPL", label = h4("Date range"),
+                   start = n[[1]],
+                   end   = n[[2]],
+                   min = n[[1]],
+                   max= n[[2]])
+  })
+
+  observeEvent(input$dateRange2CPL,{
+    m <- teamPerfOverallHelper(input, output,"CPL")
+    updateDateRangeInput(session, "dateRange2CPL",
+                         start = input$dateRange2CPL[1],
+                         end   = input$dateRange2CPL[2])
+
+  })
+
   # Analyze overall CPL team performance plots
   output$CPLTeamPerfOverallPlots <- renderPlot({
     printOrPlotTeamPerfOverall(input, output,"CPL")
@@ -2475,6 +2641,23 @@ shinyServer(function(input, output,session) {
 
 
   ################################ SSM Teams's overall performance ##############################
+  output$dateRange2SSM <- renderUI({
+    n <- teamPerfOverallHelper(input, output,"SSM")
+    dateRangeInput("dateRange2SSM", label = h4("Date range"),
+                   start = n[[1]],
+                   end   = n[[2]],
+                   min = n[[1]],
+                   max= n[[2]])
+  })
+
+  observeEvent(input$dateRange2SSM,{
+    m <- teamPerfOverallHelper(input, output,"SSM")
+    updateDateRangeInput(session, "dateRange2SSM",
+                         start = input$dateRange2SSM[1],
+                         end   = input$dateRange2SSM[2])
+
+  })
+
   # Analyze overall SSM team performance plots
   output$SSMTeamPerfOverallPlots <- renderPlot({
     printOrPlotTeamPerfOverall(input, output,"SSM")

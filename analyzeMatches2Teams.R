@@ -113,8 +113,6 @@ analyzeMatches2Teams <- function(match2,matchFunc,plotOrTable1,repType, team,opp
     print(as.Date(dateRange[1]))
     print(as.Date(dateRange[2]))
     print(names(matchesDF))
-    print(class(matchesDF$date))
-    print(class(dateRange[2]))
     matchesDF=matchesDF %>% filter(date >= dateRange[1] & date <= dateRange[2])
     print("b")
     print(dim(matchesDF))

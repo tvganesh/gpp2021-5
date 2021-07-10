@@ -19,7 +19,7 @@ printOrPlotTeamPerfOverall <- function(input,output,t20type="IPL"){
         n <- strsplit(as.character(input$teamMatches),"-")
         analyzeTeamPerfOverall(input$teamMatches,input$overallperfFunc,n[[1]][2],input$rank,
                                input$plotOrTable2,
-                               input$repType2,t20type)
+                               input$repType2,t20type,input$dateRange2)
 
     } else if (t20type == "T20M"){
         output$RankT20M = renderUI({
@@ -29,7 +29,7 @@ printOrPlotTeamPerfOverall <- function(input,output,t20type="IPL"){
         n <- strsplit(as.character(input$teamMatchesT20M),"-")
         analyzeTeamPerfOverall(input$teamMatchesT20M,input$overallperfFuncT20M,n[[1]][2],input$rankT20M,
                                input$plotOrTable2T20M,
-                               input$repType2T20M,t20type)
+                               input$repType2T20M,t20type,input$dateRange2T20M)
     } else if (t20type == "T20W"){
         output$RankT20W = renderUI({
             selectInput('rankT20W', 'Choose the rank',choices=rankValues,selected=input$rankT20W)
@@ -38,7 +38,7 @@ printOrPlotTeamPerfOverall <- function(input,output,t20type="IPL"){
         n <- strsplit(as.character(input$teamMatchesT20W),"-")
         analyzeTeamPerfOverall(input$teamMatchesT20W,input$overallperfFuncT20W,n[[1]][2],input$rankT20W,
                                input$plotOrTable2T20W,
-                               input$repType2T20W,t20type)
+                               input$repType2T20W,t20type,input$dateRange2T20W)
     }  else if (t20type == "BBL"){
         output$RankBBL = renderUI({
             selectInput('rankBBL', 'Choose the rank',choices=rankValues,selected=input$rankBBL)
@@ -47,7 +47,7 @@ printOrPlotTeamPerfOverall <- function(input,output,t20type="IPL"){
         n <- strsplit(as.character(input$teamMatchesBBL),"-")
         analyzeTeamPerfOverall(input$teamMatchesBBL,input$overallperfFuncBBL,n[[1]][2],input$rankBBL,
                                input$plotOrTable2BBL,
-                               input$repType2BBL,t20type)
+                               input$repType2BBL,t20type,input$dateRange2BBL)
 
     } else if (t20type == "NTB"){
         output$RankNTB = renderUI({
@@ -57,7 +57,7 @@ printOrPlotTeamPerfOverall <- function(input,output,t20type="IPL"){
         n <- strsplit(as.character(input$teamMatchesNTB),"-")
         analyzeTeamPerfOverall(input$teamMatchesNTB,input$overallperfFuncNTB,n[[1]][2],input$rankNTB,
                                input$plotOrTable2NTB,
-                               input$repType2NTB,t20type)
+                               input$repType2NTB,t20type,input$dateRange2NTB)
 
     } else if (t20type == "PSL"){
         output$RankPSL = renderUI({
@@ -67,7 +67,7 @@ printOrPlotTeamPerfOverall <- function(input,output,t20type="IPL"){
         n <- strsplit(as.character(input$teamMatchesPSL),"-")
         analyzeTeamPerfOverall(input$teamMatchesPSL,input$overallperfFuncPSL,n[[1]][2],input$rankPSL,
                                input$plotOrTable2PSL,
-                               input$repType2PSL,t20type)
+                               input$repType2PSL,t20type,input$dateRange2PSL)
 
     } else if (t20type == "WBB"){
         output$RankWBB = renderUI({
@@ -77,7 +77,7 @@ printOrPlotTeamPerfOverall <- function(input,output,t20type="IPL"){
         n <- strsplit(as.character(input$teamMatchesWBB),"-")
         analyzeTeamPerfOverall(input$teamMatchesWBB,input$overallperfFuncWBB,n[[1]][2],input$rankWBB,
                                input$plotOrTable2WBB,
-                               input$repType2WBB,t20type)
+                               input$repType2WBB,t20type,input$dateRange2WBB)
 
     } else if (t20type == "ODIM"){
         output$RankODIM = renderUI({
@@ -87,7 +87,7 @@ printOrPlotTeamPerfOverall <- function(input,output,t20type="IPL"){
         n <- strsplit(as.character(input$teamMatchesODIM),"-")
         analyzeTeamPerfOverall(input$teamMatchesODIM,input$overallperfFuncODIM,n[[1]][2],input$rankODIM,
                                input$plotOrTable2ODIM,
-                               input$repType2ODIM,t20type)
+                               input$repType2ODIM,t20type,input$dateRange2ODIM)
 
     } else if (t20type == "ODIW"){
         output$RankODIW = renderUI({
@@ -97,7 +97,7 @@ printOrPlotTeamPerfOverall <- function(input,output,t20type="IPL"){
         n <- strsplit(as.character(input$teamMatchesODIW),"-")
         analyzeTeamPerfOverall(input$teamMatchesODIW,input$overallperfFuncODIW,n[[1]][2],input$rankODIW,
                                input$plotOrTable2ODIW,
-                               input$repType2ODIW,t20type)
+                               input$repType2ODIW,t20type,input$dateRange2ODIW)
 
     } else if (t20type == "CPL"){
         output$RankCPL = renderUI({
@@ -107,7 +107,7 @@ printOrPlotTeamPerfOverall <- function(input,output,t20type="IPL"){
         n <- strsplit(as.character(input$teamMatchesCPL),"-")
         analyzeTeamPerfOverall(input$teamMatchesCPL,input$overallperfFuncCPL,n[[1]][2],input$rankCPL,
                                input$plotOrTable2CPL,
-                               input$repType2CPL,t20type)
+                               input$repType2CPL,t20type,input$dateRange2CPL)
 
     } else if (t20type == "SSM"){
         output$RankSSM = renderUI({
@@ -117,7 +117,7 @@ printOrPlotTeamPerfOverall <- function(input,output,t20type="IPL"){
         n <- strsplit(as.character(input$teamMatchesSSM),"-")
         analyzeTeamPerfOverall(input$teamMatchesSSM,input$overallperfFuncSSM,n[[1]][2],input$rankSSM,
                                input$plotOrTable2SSM,
-                               input$repType2SSM,t20type)
+                               input$repType2SSM,t20type,input$dateRange2SSM)
 
     }
 
